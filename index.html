@@ -1,63 +1,142 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人网站</title>
+    <title>Siyang Shen | Robotics & AI</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="noise-bg"></div>
+
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">首页</a></li>
-                <li><a href="#about">关于我</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#contact">联系我</a></li>
+        <nav class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" data-en="Home" data-zh="首页">Home</a></li>
+                <li><a href="#about" class="nav-link" data-en="About" data-zh="关于">About</a></li>
+                <li><a href="#research" class="nav-link" data-en="Research" data-zh="研究">Research</a></li>
+                <li><a href="#projects" class="nav-link" data-en="Projects" data-zh="项目">Projects</a></li>
+                <li><a href="#resume" class="nav-link" data-en="Resume" data-zh="简历">Resume</a></li>
+                <li><a href="#contact" class="nav-link" data-en="Contact" data-zh="联系">Contact</a></li>
             </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon" id="theme-icon"></span>
+                </button>
+                <button class="language-toggle" aria-label="Toggle language">
+                    <span class="language-text">中</span>
+                </button>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>欢迎来到我的个人网站</h1>
-                <p>我是一名开发者，热爱技术与创新</p>
-                <button class="cta-button">了解更多</button>
+            <div class="hero-container">
+                <div class="hero-left">
+                    <div class="hero-greeting">
+                        <span class="greeting-text" data-en="Hello, I'm" data-zh="你好，我是">Hello, I'm</span>
+                    </div>
+                    <h1 class="hero-name">
+                        <span class="name-first" data-en="Siyang" data-zh="沈思扬">Siyang</span>
+                        <span class="name-last" data-en="Shen" data-zh="">Shen</span>
+                    </h1>
+                    <div class="hero-subtitle">
+                        <p data-en="MS Student in Technology Innovation - Robotics" data-zh="技术创新-机器人学硕士研究生">MS Student in Technology Innovation - Robotics</p>
+                        <p><span data-en="University of Washington" data-zh="华盛顿大学">University of Washington</span></p>
+                        <p class="email-link">
+                            <a href="mailto:andyshen@uw.edu">andyshen@uw.edu</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-image-container">
+                        <div class="hero-image-switcher" id="imageSwitcher">
+                            <img src="photo/photo_1.png" alt="Photo 1" id="heroImage1" class="hero-image hero-image-1">
+                            <img src="photo/photo_2.png" alt="Photo 2" id="heroImage2" class="hero-image hero-image-2 active">
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="about" class="about">
             <div class="container">
-                <h2>关于我</h2>
-                <p>在这里介绍你自己，包括你的背景、技能和兴趣。</p>
-                <div class="skills">
-                    <h3>技能</h3>
-                    <ul>
-                        <li>Web开发</li>
-                        <li>JavaScript</li>
-                        <li>Python</li>
-                        <li>设计</li>
-                    </ul>
+                <div class="section-header">
+                    <h2 data-en="About Me" data-zh="关于我">About Me</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-text">
+                    <p data-en="I am a Master of Science in Technology Innovation – Robotics student at the <a href='https://www.washington.edu/' target='_blank' rel='noopener'>University of Washington</a> and a researcher in the <a href='https://robotlearning.cs.washington.edu/' target='_blank' rel='noopener'>Robot Learning Lab@UW</a>. My work focuses on combining Reinforcement Learning with Model Predictive Control (MPC) and Online Learning." data-zh="我目前就读于<a href='https://www.washington.edu/' target='_blank' rel='noopener'>华盛顿大学</a>科技创新硕士（机器人方向），同时在华盛顿大学<a href='https://robotlearning.cs.washington.edu/' target='_blank' rel='noopener'>Robot Learning Lab</a> 从事研究工作。我的研究方向主要聚焦于强化学习与模型预测控制（MPC）的结合，以及在线学习在机器人中的应用。">I am a Master of Science in Technology Innovation – Robotics student at the <a href="https://www.washington.edu/" target="_blank" rel="noopener">University of Washington</a> and a researcher in the <a href="https://robotlearning.cs.washington.edu/" target="_blank" rel="noopener">Robot Learning Lab@UW</a>. My work focuses on combining Reinforcement Learning with Model Predictive Control (MPC) and Online Learning.</p>
+
+                    <p data-en="Before joining UW, I received my Bachelor's degree with High Honors from the College of Computer Science and Technology at <a href='https://www.zju.edu.cn/english/' target='_blank' rel='noopener'>Zhejiang University</a>, along with a minor in Business Administration." data-zh="在加入华盛顿大学之前，我以优异的成绩毕业于<a href='https://www.zju.edu.cn/english/' target='_blank' rel='noopener'>浙江大学</a>计算机科学与技术学院，获得工学学士学位，辅修工商管理。">Before joining UW, I received my Bachelor's degree with High Honors from the College of Computer Science and Technology at <a href="https://www.zju.edu.cn/english/" target="_blank" rel="noopener">Zhejiang University</a>, along with a minor in Business Administration.</p>
+
+                    <div class="about-interests">
+                        <h3 data-en="Research Interests" data-zh="研究兴趣">Research Interests</h3>
+                        <div class="interests-grid">
+                            <span class="interest-tag" data-en="Reinforcement Learning" data-zh="强化学习">Reinforcement Learning</span>
+                            <span class="interest-tag" data-en="Robot Learning" data-zh="机器人学习">Robot Learning</span>
+                            <span class="interest-tag" data-en="Online Learning" data-zh="在线学习">Online Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="research">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-en="Research" data-zh="研究">Research</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="research-content">
+                    <div class="research-item">
+                        <div class="research-image">
+                        </div>
+                        <div class="research-info">
+                            <div class="research-tags">
+                                <span class="tag" data-en="Adversarial Imitation Learning" data-zh="对抗模仿学习">Adversarial Imitation Learning</span>
+                                <span class="tag" data-en="Reinforcement Learning" data-zh="强化学习">Reinforcement Learning</span>
+                                <span class="tag" data-en="Model Predictive Control" data-zh="模型预测控制">Model Predictive Control</span>
+                                <span class="tag" data-en="Online Learning" data-zh="在线学习">Online Learning</span>
+                            </div>
+                            <h3 data-en="Online Training with Model Predictive Adversarial Imitation Learning" data-zh="基于模型预测对抗模仿学习的在线训练">Online Training with Model Predictive Adversarial Imitation Learning</h3>
+                            <p class="research-venue" data-en="Summer Research at Robot Learning Lab @ UW" data-zh="Robot Learning Lab @ UW 暑期研究">Summer Research at <a href="https://robotlearning.cs.washington.edu/" target="_blank" rel="noopener">Robot Learning Lab @ UW</a></p>
+                            <div class="research-status">
+                                <span class="status-badge" data-en="Paper in progress" data-zh="论文撰写中">Paper in progress</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="projects">
             <div class="container">
-                <h2>我的项目</h2>
-                <div class="project-grid">
+                <div class="section-header">
+                    <h2 data-en="Course Projects" data-zh="项目">Course Projects</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="projects-grid">
                     <div class="project-card">
-                        <h3>项目一</h3>
-                        <p>项目描述...</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>项目二</h3>
-                        <p>项目描述...</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>项目三</h3>
-                        <p>项目描述...</p>
+                        <div class="project-image">
+                            <div class="project-placeholder"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3 data-en="Advanced Machine Learning Project" data-zh="高级机器学习项目">Advanced Machine Learning Project</h3>
+                            <p data-en="Implementation of novel algorithms for robotic control and learning systems." data-zh="为机器人控制和学习系统实现新颖算法。">Implementation of novel algorithms for robotic control and learning systems.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">ROS</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,18 +144,56 @@
 
         <section id="contact" class="contact">
             <div class="container">
-                <h2>联系我</h2>
-                <p>如果你想与我取得联系，请随时联系我。</p>
-                <div class="contact-info">
-                    <p>邮箱: your.email@example.com</p>
-                    <p>电话: +86 123 4567 8901</p>
+                <div class="section-header">
+                    <h2 data-en="Education" data-zh="教育经历">Education</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="education-timeline">
+                    <div class="education-item">
+                        <div class="education-year">2024</div>
+                        <div class="education-content">
+                            <h3 data-en="University of Washington" data-zh="华盛顿大学">University of Washington</h3>
+                            <p class="education-degree" data-en="MS in Technology Innovation - Robotics" data-zh="机器人硕士">MS in Technology Innovation - Robotics</p>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-year">2020</div>
+                        <div class="education-content">
+                            <h3 data-en="Zhejiang University" data-zh="浙江大学">Zhejiang University</h3>
+                            <p class="education-degree" data-en="BEng in Industrial Design" data-zh="工业设计学士">BEng in Industrial Design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-section">
+                    <div class="section-header">
+                        <h2 data-en="Contact" data-zh="联系">Contact</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="contact-info">
+                        <p data-en="Feel free to reach out for research collaborations or any questions." data-zh="欢迎就研究合作或任何问题与我联系。">Feel free to reach out for research collaborations or any questions.</p>
+                        <div class="contact-links">
+                            <div class="contact-link">
+                                <span data-en="Email" data-zh="邮箱">Email</span>
+                                <span>
+                                    <a href="mailto:andyshen@uw.edu">andyshen@uw.edu</a>
+                                    <br class="zh-only" style="display: none;">
+                                    <a href="mailto:3200105595@zju.edu.cn" class="zh-only" style="display: none;">3200105595@zju.edu.cn</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 我的个人网站. 保留所有权利.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Siyang Shen. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
