@@ -101,6 +101,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Handle Resume link based on language
+    const resumeLink = document.querySelector('.resume-link');
+    if (resumeLink) {
+        resumeLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const currentLanguage = document.documentElement.getAttribute('data-lang') || 'en';
+            const linkEn = this.getAttribute('data-link-en');
+            const linkZh = this.getAttribute('data-link-zh');
+            const targetUrl = currentLanguage === 'en' ? linkEn : linkZh;
+            window.open(targetUrl, '_blank', 'noopener,noreferrer');
+        });
+    }
+
     // Mobile navigation
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');

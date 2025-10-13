@@ -192,7 +192,14 @@ main {
     display: grid;
     grid-template-columns: 1fr 500px;
     gap: 2rem;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.hero-container .about-content {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
 }
 
 .hero-left {
@@ -247,7 +254,7 @@ main {
 }
 
 .email-link a {
-    font-family: var(--mono-font);
+    font-family: var(--sans-font);
     font-size: 0.9rem;
 }
 
@@ -357,12 +364,13 @@ main {
 }
 
 section {
-    padding: 3rem 0;
+    padding: 5rem 0 3rem 0;
     scroll-snap-align: start;
     min-height: 100vh;
     display: flex;
     align-items: center;
     transition: all 0.5s ease;
+    scroll-margin-top: 70px;
 }
 
 .section-header {
@@ -396,10 +404,10 @@ section {
 }
 
 .about-text p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
+    margin-bottom: 1rem;
+    line-height: 1.6;
 }
 
 .about-text a {
@@ -413,12 +421,12 @@ section {
 }
 
 .about-interests {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
 }
 
 .about-interests h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
     color: var(--text-primary);
     font-weight: 500;
 }
@@ -453,28 +461,60 @@ section {
     max-width: 1000px;
     margin: 0 auto;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .research-item {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 2rem;
+    overflow: hidden;
     transition: var(--transition);
     box-shadow: var(--shadow-light);
+    aspect-ratio: 2 / 1;
+    position: relative;
 }
 
 .research-item:hover {
     box-shadow: var(--shadow-medium);
 }
 
+.research-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    z-index: 0;
+}
+
+[data-theme="dark"] .research-item::before {
+    opacity: 0.7;
+}
+
+.research-item:first-child::before {
+    background-image: url('photo/Group 1.png');
+}
+
+.research-item:nth-child(2)::before {
+    background-image: url('photo/image 5.png');
+}
+
+.research-item:nth-child(3)::before {
+    background-image: url('photo/Frame 4 1.png');
+}
+
 .research-image {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    display: none;
 }
 
 .research-placeholder {
@@ -494,32 +534,55 @@ section {
 .research-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
 }
 
 .tag {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-family: var(--mono-font);
-    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-family: var(--sans-font);
+    font-size: 0.75rem;
     color: var(--text-secondary);
+}
+
+[data-lang="zh"] .tag {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
 }
 
 .research-info h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-    font-weight: 500;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-weight: 600;
     line-height: 1.3;
+    text-align: center;
+}
+
+[data-lang="zh"] .research-info h3 {
+    font-size: 2.6rem;
+}
+
+.research-info {
+    padding: 3rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
 }
 
 .research-venue {
-    color: var(--text-secondary);
+    color: #ffffff;
     margin-bottom: 1rem;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    text-align: center;
 }
 
 .research-venue a {
@@ -541,7 +604,7 @@ section {
     color: var(--text-secondary);
     padding: 0;
     border-radius: 0;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 400;
     font-style: italic;
 }
@@ -683,7 +746,7 @@ section {
 /* Contact Section (Combined Education + Contact) */
 .contact {
     background: var(--bg-primary);
-    padding: 4rem 0 2rem 0;
+    padding: 6rem 0 2rem 0;
     position: relative;
 }
 
@@ -795,7 +858,7 @@ section {
 }
 
 .contact-link span:last-child {
-    font-family: var(--mono-font);
+    font-family: var(--sans-font);
     font-size: 0.95rem;
     font-weight: 500;
     display: block;
