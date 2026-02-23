@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Speech to Delivery | Siyang Shen</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-page { padding: 1rem 1.5rem 4rem; max-width: 1000px; margin: 0 auto; }
+        .project-page h1 { font-size: clamp(1.5rem, 4vw, 2.25rem); font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; line-height: 1.4; text-align: center; }
+        .project-page .back-link { display: inline-block; margin-bottom: 2rem; color: var(--primary-color); text-decoration: none; font-size: 0.9rem; }
+        .project-page .back-link:hover { text-decoration: underline; }
+        .project-page .project-links { display: flex; gap: 14px; margin-top: 0.5rem; margin-bottom: 1rem; justify-content: center; flex-wrap: wrap; }
+        .project-page .project-link-btn { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.7); background: transparent; color: #fff; font-size: 0.8rem; font-weight: 500; text-decoration: none; transition: all 0.25s ease; cursor: pointer; }
+        .project-page .project-link-btn:hover { background: rgba(255, 255, 255, 0.15); border-color: rgba(255, 255, 255, 0.9); transform: translateY(-1px); }
+        .project-page .project-link-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+        .project-page .video-wrap { position: relative; width: 100%; border-radius: 12px; overflow: hidden; background: var(--bg-secondary); box-shadow: var(--shadow-medium); }
+        .project-page .video-wrap video { width: 100%; height: auto; display: block; }
+    </style>
+</head>
+<body>
+    <div class="noise-bg"></div>
+
+    <main>
+        <div class="project-page">
+            <a href="index.html#projects" class="back-link" data-en="← Back to Projects" data-zh="← 返回项目">← Back to Projects</a>
+            <h1 data-en="From Speech to Delivery: Human-Centered Multimodal Interaction for Indoor Service Robotics" data-zh="从语音到配送：室内服务机器人以人为本的多模态交互">From Speech to Delivery: Human-Centered Multimodal Interaction for Indoor Service Robotics</h1>
+            <div class="project-links">
+                <a href="file/Techin_517_Paper_HRI_2026.pdf" target="_blank" rel="noopener" class="project-link-btn" title="Paper" data-en="Paper" data-zh="论文">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span data-en="Paper" data-zh="论文">Paper</span>
+                </a>
+            </div>
+            <div class="video-wrap">
+                <video src="video/Final%20Demo.mp4" controls playsinline muted></video>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
