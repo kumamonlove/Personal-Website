@@ -529,10 +529,6 @@ a.research-item:hover::before {
 }
 
 .research-item:nth-child(2)::before {
-    background-image: url('photo/image 5.png');
-}
-
-.research-item:nth-child(3)::before {
     background-image: url('photo/Frame 4 1.png');
 }
 
