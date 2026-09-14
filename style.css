@@ -847,7 +847,9 @@ a.research-item:hover::before {
     font-size: 1rem;
     color: var(--primary-color);
     font-weight: 600;
-    min-width: 60px;
+    min-width: 12ch;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .education-content h3 {
